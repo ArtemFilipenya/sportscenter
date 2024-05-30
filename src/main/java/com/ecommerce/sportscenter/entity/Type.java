@@ -6,6 +6,15 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
+/**
+ *  Описание: Представляет тип продукта (например, одежда, обувь, аксессуары).
+ * Связи:
+ * @OneToMany(mappedBy = "type"): Это означает, что один Type может быть
+ * ассоциирован с множеством Product. Связь "один ко многим" устанавливается с полем type в классе Product.
+ */
+
 @Entity
 @Table(name = "Type")
 @Data
@@ -20,4 +29,7 @@ public class Type {
 
     @Column(name = "Name")
     private String name;
+
+    @OneToMany(mappedBy = "type", fetch = FetchType.LAZY)
+    private List<Product> products;
 }
