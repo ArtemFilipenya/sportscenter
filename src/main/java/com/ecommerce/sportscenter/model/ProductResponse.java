@@ -22,7 +22,7 @@ public class ProductResponse {
 
     private String pictureUrl;
 
-    private Brand brand;
+    private String productBrand;
 
-    private Type type;
+    private String productType;
 }
